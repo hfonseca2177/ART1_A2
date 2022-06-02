@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
 //Name: GD67_FireHydrant01.ma
-//Last modified: Thu, Jun 02, 2022 12:27:13 PM
+//Last modified: Thu, Jun 02, 2022 12:29:10 PM
 //Codeset: 1252
 requires maya "2022";
 requires "mtoa" "5.0.0.1";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Enterprise v2009 (Build: 19044)";
-fileInfo "UUID" "6D6F70C4-445D-7865-B633-A09BE78375F8";
+fileInfo "UUID" "F621DA28-49DC-24D1-81DA-3282F3803EFE";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "E8CF49EF-4749-A522-282A-02AD86EC3A4B";
@@ -1807,11 +1807,11 @@ createNode imagePlane -n "HydrantRefShape" -p "HydrantRef";
 	setAttr ".w" 11.57;
 	setAttr ".h" 23.880000000000003;
 	setAttr ".cs" -type "string" "sRGB";
-createNode transform -n "pCylinder1";
+createNode transform -n "Body";
 	rename -uid "77B14A2C-40A0-7411-E0A5-D09DB7187DE5";
 	setAttr ".rp" -type "double3" 0 46.224461449739287 0 ;
 	setAttr ".sp" -type "double3" 0 46.224461449739287 0 ;
-createNode mesh -n "pCylinderShape1" -p "pCylinder1";
+createNode mesh -n "BodyShape" -p "Body";
 	rename -uid "03D61E0A-48A9-4C9D-7CA2-C299C8D8777A";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -3397,5 +3397,5 @@ connectAttr "layerManager.dli[1]" "Blueprint.id";
 connectAttr "scale_man_6_footSG.pa" ":renderPartition.st" -na;
 connectAttr "M_silhouette.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "BodyShape.iog" ":initialShadingGroup.dsm" -na;
 // End of GD67_FireHydrant01.ma
